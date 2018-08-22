@@ -13,15 +13,6 @@
 - BrickCraft is a offically project of [DigitalSnake](https://github.com/DigitalSnakeSoftware).
 - BrickCraft development started on August 22, 2018.
 
-### Plans
-
-- Add Multiplayer Support
-- Add MAC Support
-- Better Rendering
-- Add Shader Quads
-- Move from LWJGL 2 to Jungle ([LWJGL 3](https://www.lwjgl.org/) Game Engine)
-- Move from Java 1.8 to Java 10
-
 ### License
 
 - This game it's under a MIT LICENSE. More details in the [LICENSE](https://github.com/DigitalSnakeSoftware/BrickCraft/blob/master/LICENSE) File.
