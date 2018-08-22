@@ -17,8 +17,10 @@
 
 - Add Multiplayer Support
 - Add MAC Support
+- Better Rendering
 - Add Shader Quads
 - Move from LWJGL 2 to Jungle (LWJGL 3 Game Engine)
+- Move from Java 1.8 to Java 10
 
 ### License
 
