@@ -4,14 +4,16 @@ import org.brickcraft.graphics.DisplayManager;
 import org.brickcraft.graphics.loader.Loader;
 import org.brickcraft.graphics.models.RawModel;
 import org.brickcraft.graphics.renderers.Renderer;
+import org.brickcraft.utils.DebugLogger;
 import org.lwjgl.opengl.Display;
 
 import shaders.StaticShader;
 
-public class GameManager {
-	
+public class GameManager implements DebugLogger {
+
 	public static void main(String[] args) {
 		
+		DebugLogger.debugMessage("Creating Window...");
 		DisplayManager.createWindow();
 		
 		 float[] vertices = { 
@@ -37,6 +39,7 @@ public class GameManager {
 		
 		while (!Display.isCloseRequested()) {
 			
+//			DebugLogger.debugMessage("Rendering Window...");
 			renderer.prepare();
 			shader.start();
 			renderer.render(model);
@@ -45,6 +48,7 @@ public class GameManager {
 			
 		}
 		
+		DebugLogger.debugMessage("Closing Window...");
 		shader.cleanUp();
 		loader.cleanUp();
 		DisplayManager.closeWindow();

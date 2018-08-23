@@ -21,6 +21,26 @@ public class DisplayManager {
 	private static int WIDTH = 800, HEIGHT = 600, FPS_CAP = 120;
 	private static String TITLE = "BrickCraft 3D";
 	
+	private static long lastFPSCheck = 0;
+	private static int currentFPS = 0;
+	private static int totalFrames = 0;
+	
+	private static void countFPS() {
+	
+		totalFrames++;
+		
+		if (System.nanoTime() > lastFPSCheck + 1000000000) {
+			
+			lastFPSCheck = System.nanoTime();
+			currentFPS = totalFrames;
+			totalFrames = 0;
+			
+//			System.out.println("FPS: " + getFPS());
+			
+		}
+		
+	}
+	
 	public static void createWindow() {
 		
 			try {
@@ -50,10 +70,9 @@ public class DisplayManager {
 		
 	}
 	
-	/*WIP*/
-	private static void countFPS() {
+	public static int getFPS() {
 		
-		//TODO: Count FPS in Game
+		return currentFPS;
 		
 	}
 	

@@ -4,10 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.brickcraft.utils.DebugLogger;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
 
-public abstract class ShaderProgram {
+public abstract class ShaderProgram implements DebugLogger {
 
 	private int programID;
 	private int vertexShaderID;
@@ -79,7 +80,7 @@ public abstract class ShaderProgram {
 			
 		} catch (IOException e) {
 			
-			System.err.println("Couln't read the file!");
+			DebugLogger.debugError("Couln't read the file!");
 			e.printStackTrace();
 			System.exit(-1);
 			
@@ -92,8 +93,8 @@ public abstract class ShaderProgram {
 		
 		if (GL20.glGetShaderi(shaderID, GL20.GL_COMPILE_STATUS) == GL11.GL_FALSE) {
 			
-			System.out.println(GL20.glGetShaderInfoLog(shaderID, 500));
-			System.err.println("Couln't compile the shader!");
+			DebugLogger.debugMessage(GL20.glGetShaderInfoLog(shaderID, 500));
+			DebugLogger.debugError("Couln't compile the shader!");
 			System.exit(-1);
 			
 		}
