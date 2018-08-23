@@ -1,11 +1,18 @@
 package org.brickcraft.graphics;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+
+import javax.imageio.ImageIO;
+
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.ContextAttribs;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.PixelFormat;
+import org.newdawn.slick.opengl.ImageIOImageData;
 
 public class DisplayManager {
 
@@ -16,13 +23,13 @@ public class DisplayManager {
 	
 	public static void createWindow() {
 		
-		try {
-			Display.setDisplayMode(new DisplayMode(WIDTH, HEIGHT));
-			Display.create(new PixelFormat(), attribs);
-			Display.setTitle(TITLE);
-		} catch (LWJGLException e) {
-			e.printStackTrace();
-		}
+			try {
+				Display.setDisplayMode(new DisplayMode(WIDTH, HEIGHT));
+				Display.create(new PixelFormat(), attribs);
+				Display.setTitle(TITLE);
+			} catch (LWJGLException e) {
+				e.printStackTrace();
+			}
 		
 		GL11.glViewport(0, 0, WIDTH, HEIGHT);
 		
@@ -33,11 +40,20 @@ public class DisplayManager {
 		Display.sync(FPS_CAP);
 		Display.update();
 		
+		countFPS();
+		
 	}
 	
 	public static void closeWindow() {
 		
 		Display.destroy();
+		
+	}
+	
+	/*WIP*/
+	private static void countFPS() {
+		
+		//TODO: Count FPS in Game
 		
 	}
 	
