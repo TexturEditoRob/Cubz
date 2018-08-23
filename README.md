@@ -7,6 +7,7 @@
 
 ### About
 
+- BrickCraft isn't coded in any of DigitalSnake's Java Libraries, It is coded in LWJGL 2
 - BrickCraft is a 3D Java Game witch requires Java 1.8 or Higher and also requires PixelFormat Acceleration.
 - The owner of BrickCraft it's actually [ImTallone](https://github.com/CristeaAndreiFlavian). Witch is an OWNER of DigitalSnake.
 - BrickCraft is a offically project of [DigitalSnake](https://github.com/DigitalSnakeSoftware).
