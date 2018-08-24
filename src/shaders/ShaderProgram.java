@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-import org.brickcraft.utils.DebugLogger;
+import org.cubz.utils.DebugLogger;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
 

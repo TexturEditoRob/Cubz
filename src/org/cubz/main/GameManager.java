@@ -1,12 +1,12 @@
-package org.brickcraft.main;
+package org.cubz.main;
 
-import org.brickcraft.graphics.DisplayManager;
-import org.brickcraft.graphics.loader.Loader;
-import org.brickcraft.graphics.models.RawModel;
-import org.brickcraft.graphics.models.TexturedModel;
-import org.brickcraft.graphics.renderers.Renderer;
-import org.brickcraft.graphics.textures.ModelTexture;
-import org.brickcraft.utils.DebugLogger;
+import org.cubz.graphics.DisplayManager;
+import org.cubz.graphics.loader.Loader;
+import org.cubz.graphics.models.RawModel;
+import org.cubz.graphics.models.TexturedModel;
+import org.cubz.graphics.renderers.Renderer;
+import org.cubz.graphics.textures.ModelTexture;
+import org.cubz.utils.DebugLogger;
 import org.lwjgl.opengl.Display;
 
 import shaders.StaticShader;

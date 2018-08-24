@@ -1,4 +1,4 @@
-package org.brickcraft.utils;
+package org.cubz.utils;
 
 import java.util.Calendar;
 

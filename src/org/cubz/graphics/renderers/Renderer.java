@@ -1,7 +1,7 @@
-package org.brickcraft.graphics.renderers;
+package org.cubz.graphics.renderers;
 
-import org.brickcraft.graphics.models.RawModel;
-import org.brickcraft.graphics.models.TexturedModel;
+import org.cubz.graphics.models.RawModel;
+import org.cubz.graphics.models.TexturedModel;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL13;
 import org.lwjgl.opengl.GL20;

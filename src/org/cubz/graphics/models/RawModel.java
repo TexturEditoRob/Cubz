@@ -1,4 +1,4 @@
-package org.brickcraft.graphics.models;
+package org.cubz.graphics.models;
 
 public class RawModel {
 

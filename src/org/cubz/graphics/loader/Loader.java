@@ -1,4 +1,4 @@
-package org.brickcraft.graphics.loader;
+package org.cubz.graphics.loader;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.brickcraft.graphics.models.RawModel;
+import org.cubz.graphics.models.RawModel;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL15;

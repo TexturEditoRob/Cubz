@@ -1,6 +1,6 @@
-package org.brickcraft.graphics.models;
+package org.cubz.graphics.models;
 
-import org.brickcraft.graphics.textures.ModelTexture;
+import org.cubz.graphics.textures.ModelTexture;
 
 public class TexturedModel {
 

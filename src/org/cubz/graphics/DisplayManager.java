@@ -1,4 +1,4 @@
-package org.brickcraft.graphics;
+package org.cubz.graphics;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class DisplayManager {
 	private static ContextAttribs attribs = new ContextAttribs(3,2).withForwardCompatible(true).withProfileCore(true);
 	
 	private static int WIDTH = 800, HEIGHT = 600, FPS_CAP = 120;
-	private static String TITLE = "BrickCraft 3D";
+	private static String TITLE = "Cubz 3D";
 	
 	private static long lastFPSCheck = 0;
 	private static int currentFPS = 0;

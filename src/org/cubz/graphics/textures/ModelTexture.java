@@ -1,4 +1,4 @@
-package org.brickcraft.graphics.textures;
+package org.cubz.graphics.textures;
 
 public class ModelTexture {
 
