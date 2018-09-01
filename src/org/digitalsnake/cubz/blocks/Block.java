@@ -1,4 +1,4 @@
-package org.digitalsnake.cubz.api;
+package org.digitalsnake.cubz.blocks;
 
 import org.jungle.Mesh;
 import org.jungle.Texture;

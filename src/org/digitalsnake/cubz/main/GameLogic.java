@@ -1,7 +1,7 @@
 package org.digitalsnake.cubz.main;
 
-import org.digitalsnake.cubz.api.World;
 import org.digitalsnake.cubz.utils.DebugLogger;
+import org.digitalsnake.cubz.world.World;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 import org.jungle.Camera;
@@ -87,9 +87,12 @@ public class GameLogic implements IGameLogic {
 		if (window.isKeyPressed(GLFW.GLFW_KEY_S)) {
 			cameraInc.z = 1;
 		}
-		if (window.isKeyPressed(GLFW.GLFW_KEY_Q)) {
+		if (window.isKeyPressed(GLFW.GLFW_KEY_A)) {
 			cameraInc.x = -1;
 		}
+//		if (window.isKeyPressed(GLFW.GLFW_KEY_Q)) {
+//			cameraInc.x = -1;
+//		}
 		if (window.isKeyPressed(GLFW.GLFW_KEY_D)) {
 			cameraInc.x = 1;
 		}
@@ -121,7 +124,10 @@ public class GameLogic implements IGameLogic {
 			ctx.getCamera().moveRotation(mouseInput.getDisplVec().x * 0.51f, mouseInput.getDisplVec().y * 0.51f, 0);
 		}
 		cameraInc.x = cameraInc.y = cameraInc.z = 0; // Reset positions
-		
+		countFPS();
+	}
+	
+	private void countFPS() {
 		currentFrames++;
 		if (System.nanoTime() > lastFPSCheck + 1000000000) {
 			lastFPSCheck = System.nanoTime();
@@ -129,4 +135,5 @@ public class GameLogic implements IGameLogic {
 			currentFrames = 0;
 		}
 	}
+	
 }

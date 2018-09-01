@@ -1,5 +1,6 @@
-package org.digitalsnake.cubz.api;
+package org.digitalsnake.cubz.world;
 
+import org.digitalsnake.cubz.blocks.BlockInstance;
 import org.digitalsnake.cubz.blocks.GrassBlock;
 
 public class World {
