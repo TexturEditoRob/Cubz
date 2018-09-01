@@ -39,6 +39,10 @@ public class BlockInstance {
 		return block._meshCache;
 	}
 	
+	public Block getBlock() {
+		return block;
+	}
+	
 	public Spatial getSpatial() {
 		if (spatial == null) {
 			spatial = new Spatial(getMesh());

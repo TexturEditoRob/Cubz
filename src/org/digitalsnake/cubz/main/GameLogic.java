@@ -1,5 +1,7 @@
 package org.digitalsnake.cubz.main;
 
+import org.digitalsnake.cubz.blocks.BlockInstance;
+import org.digitalsnake.cubz.entity.Entity;
 import org.digitalsnake.cubz.utils.DebugLogger;
 import org.digitalsnake.cubz.world.World;
 import org.joml.Vector3f;
@@ -24,13 +26,9 @@ import org.lwjgl.glfw.GLFW;
 public class GameLogic implements IGameLogic {
 
 	private IRenderer renderer;
-	private Context ctx;
+	public static Context ctx;
 	private Game game;
 	private DirectionalLight light;
-	private Mesh mesh;
-	private Texture texture;
-	private Material material;
-	private Spatial spatial;
 	private Vector3f cameraInc;
 	private MouseInput mouseInput;
 	
@@ -56,16 +54,10 @@ public class GameLogic implements IGameLogic {
 
 	@Override
 	public void init(Window window) throws Exception {
-		texture = new Texture("res/assets/grassblock.png");
 		cameraInc = new Vector3f();
-		mesh = OBJLoader.loadMesh("res/assets/evil.obj");
-		material = new Material(texture, 1f);
-		mesh.setMaterial(material);
-		spatial = new Spatial(mesh);
-		spatial.setPosition(20, 0, 10);
 		renderer = new JungleRender();
 		ctx = new Context(game, new Camera());
-		ctx.addSpatial(spatial);
+		ctx.getCamera().setPosition(32, 2, 32);
 		world = new World();
 		light = new DirectionalLight(new Vector3f(1, 1, 0.7f), new Vector3f(0, 1, 1), 1.f);
 		mouseInput = new MouseInput();
@@ -75,6 +67,24 @@ public class GameLogic implements IGameLogic {
 			renderer.init(window);
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		
+		for (int x = 0; x < world.getWidth(); x++) {
+			for (int z = 0; z < world.getDepth(); z++) {
+				for (int y = 0; y < 255; y++) {
+					BlockInstance b = world.getBlock(x, y, z);
+					if (b != null) {
+						Spatial bs = b.getSpatial();
+						bs.setPosition(x, y, z);
+						bs.setScale(0.5f);
+						ctx.addSpatial(bs);
+					}
+				}
+			}
+		}
+		
+		for (Entity en : world.getEntities()) {
+			ctx.addSpatial(en.getSpatial());
 		}
 	}
 
@@ -114,6 +124,7 @@ public class GameLogic implements IGameLogic {
 		
 		window.setClearColor(new Vector4f(0.1f, 0.7f, 0.7f, 1f));
 		renderer.render(window, ctx, new Vector3f(0.3f, 0.3f, 0.3f), null, null, light);
+		countFPS();
 	}
 
 	@Override
@@ -124,7 +135,9 @@ public class GameLogic implements IGameLogic {
 			ctx.getCamera().moveRotation(mouseInput.getDisplVec().x * 0.51f, mouseInput.getDisplVec().y * 0.51f, 0);
 		}
 		cameraInc.x = cameraInc.y = cameraInc.z = 0; // Reset positions
-		countFPS();
+		for (Entity en : world.getEntities()) {
+			en.update();
+		}
 	}
 	
 	private void countFPS() {
@@ -133,6 +146,7 @@ public class GameLogic implements IGameLogic {
 			lastFPSCheck = System.nanoTime();
 			currentFPS = currentFrames;
 			currentFrames = 0;
+			System.out.println("FPS: " + currentFPS);
 		}
 	}
 	
