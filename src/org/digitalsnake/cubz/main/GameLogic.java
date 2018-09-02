@@ -1,7 +1,10 @@
 package org.digitalsnake.cubz.main;
 
+import static org.digitalsnake.cubz.utils.Reference.*;
+
 import org.digitalsnake.cubz.blocks.BlockInstance;
 import org.digitalsnake.cubz.entity.Entity;
+import org.digitalsnake.cubz.launcher.GameLauncher;
 import org.digitalsnake.cubz.ui.UISystem;
 import org.digitalsnake.cubz.utils.debug.DebugLogger;
 import org.digitalsnake.cubz.world.World;
@@ -26,6 +29,8 @@ import org.lwjgl.glfw.GLFW;
 
 public class GameLogic implements IGameLogic {
 
+	private Window win;
+	
 	private IRenderer renderer;
 	public static Context ctx;
 	private Game game;
@@ -46,6 +51,9 @@ public class GameLogic implements IGameLogic {
 	@Override
 	public void bind(Game g) {
 		game = g;
+		win = GameLauncher.getWindow();
+		win.setSize(WIDTH, HEIGHT);
+		win.setTitle(TITLE);
 	}
 
 	@Override
