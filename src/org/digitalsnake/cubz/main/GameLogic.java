@@ -1,7 +1,7 @@
 package org.digitalsnake.cubz.main;
 
 import static org.digitalsnake.cubz.utils.Reference.*;
-
+import static org.digitalsnake.cubz.utils.keycodes.KeyCodes.*;
 import org.digitalsnake.cubz.blocks.BlockInstance;
 import org.digitalsnake.cubz.entity.Entity;
 import org.digitalsnake.cubz.launcher.GameLauncher;
@@ -29,15 +29,13 @@ import org.lwjgl.glfw.GLFW;
 
 public class GameLogic implements IGameLogic {
 
-	private Window win;
-	
-	private IRenderer renderer;
 	public static Context ctx;
+	private Window win;
+	private IRenderer renderer;
 	private Game game;
 	private DirectionalLight light;
 	private Vector3f cameraInc;
 	private MouseInput mouseInput;
-	
 	private long lastFPSCheck = 0;
 	private int currentFrames = 0;
 	private static int currentFPS = 0;
@@ -100,26 +98,23 @@ public class GameLogic implements IGameLogic {
 	@Override
 	public void input(Window window) {
 		
-		if (window.isKeyPressed(GLFW.GLFW_KEY_W)) {
+		if (window.isKeyPressed(KEY_W)) {
 			cameraInc.z = -1;
 		}
-		if (window.isKeyPressed(GLFW.GLFW_KEY_S)) {
+		if (window.isKeyPressed(KEY_S)) {
 			cameraInc.z = 1;
 		}
-		if (window.isKeyPressed(GLFW.GLFW_KEY_A)) {
+		if (window.isKeyPressed(KEY_A)) {
 			cameraInc.x = -1;
 		}
-//		if (window.isKeyPressed(GLFW.GLFW_KEY_Q)) {
-//			cameraInc.x = -1;
-//		}
-		if (window.isKeyPressed(GLFW.GLFW_KEY_D)) {
+		if (window.isKeyPressed(KEY_D)) {
 			cameraInc.x = 1;
 		}
-		if (window.isKeyPressed(GLFW.GLFW_KEY_LEFT_SHIFT)) {
-			cameraInc.y = -1;
-		}
-		if  (window.isKeyPressed(GLFW.GLFW_KEY_SPACE)) {
+		if (window.isKeyPressed(KEY_SPACE)) {
 			cameraInc.y = 1;
+		}
+		if  (window.isKeyPressed(KEY_SHIFT1)) {
+			cameraInc.y = -1;
 		}
 		mouseInput.input(window);
 	}
