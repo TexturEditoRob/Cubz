@@ -7,6 +7,7 @@ public class GrassBlock extends Block {
 		setTexture("grassblock");
 	}
 	
+	@Override
 	public void update() {
 		
 	}
