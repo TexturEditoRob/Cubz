@@ -5,7 +5,7 @@ import org.jungle.game.Game;
 
 public class GameLauncher extends Game {
 
-	public static GameLauncher instance;
+	private static GameLauncher instance;
 	
 	public static void main(String[] args) {
 		GameLauncher.instance = new GameLauncher();

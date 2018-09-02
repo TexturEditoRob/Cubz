@@ -3,7 +3,7 @@ package org.digitalsnake.cubz.main;
 import org.digitalsnake.cubz.blocks.BlockInstance;
 import org.digitalsnake.cubz.entity.Entity;
 import org.digitalsnake.cubz.ui.UISystem;
-import org.digitalsnake.cubz.utils.DebugLogger;
+import org.digitalsnake.cubz.utils.debug.DebugLogger;
 import org.digitalsnake.cubz.world.World;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
@@ -147,7 +147,12 @@ public class GameLogic implements IGameLogic {
 			lastFPSCheck = System.nanoTime();
 			currentFPS = currentFrames;
 			currentFrames = 0;
-			System.out.println("FPS: " + currentFPS);
+			if (currentFPS <= 10) {
+				DebugLogger.logInfo("Running on " + getFPS() + " FPS (Bad Performance)");
+			}
+			if (currentFPS >= 50) {
+				DebugLogger.logInfo("Running on " + getFPS() + " FPS (Good Performance)");
+			}
 		}
 	}
 	

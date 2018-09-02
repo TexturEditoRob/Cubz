@@ -1,4 +1,4 @@
-package org.digitalsnake.cubz.utils;
+package org.digitalsnake.cubz.utils.debug;
 
 import java.util.Calendar;
 

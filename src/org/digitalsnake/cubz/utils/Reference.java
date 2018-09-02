@@ -1,12 +1,17 @@
 package org.digitalsnake.cubz.utils;
 
 import org.digitalsnake.cubz.launcher.GameLauncher;
+import org.digitalsnake.cubz.main.GameLogic;
 
 public class Reference {
 
-	/**
-	 * @see GameLauncher
-	 */
-	public static final GameLauncher LAUNCHER_INSTANCE = GameLauncher.instance;
+	public static int WIDTH, HEIGHT;
+	public static String TITLE;
+	
+	public Reference() {
+		WIDTH = 800;
+		HEIGHT = 600;
+		TITLE = "Cubz";
+	}
 	
 }
