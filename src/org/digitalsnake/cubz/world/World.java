@@ -18,7 +18,7 @@ public class World {
 	private ArrayList<Entity> entities = new ArrayList<>();
 	
 	public World() {
-		name = "asdfmovie";
+		name = "Flat World";
 		width = 64;
 		depth = 64;
 		blocks = new BlockInstance[width][255][depth];

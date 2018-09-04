@@ -128,7 +128,6 @@ public class GameLogic implements IGameLogic {
 		
 		window.setClearColor(new Vector4f(0.1f, 0.7f, 0.7f, 1f));
 		renderer.render(window, ctx, new Vector3f(0.3f, 0.3f, 0.3f), null, null, light);
-		countFPS();
 	}
 
 	@Override
@@ -142,21 +141,20 @@ public class GameLogic implements IGameLogic {
 		for (Entity en : world.getEntities()) {
 			en.update();
 		}
+		countFPS();
 	}
 	
-	private void countFPS() {
+	protected void countFPS() {
 		currentFrames++;
 		if (System.nanoTime() > lastFPSCheck + 1000000000) {
 			lastFPSCheck = System.nanoTime();
 			currentFPS = currentFrames;
 			currentFrames = 0;
-			if (currentFPS <= 10) {
-				DebugLogger.logInfo("Running on " + getFPS() + " FPS (Bad Performance)");
-			}
-			if (currentFPS >= 50) {
-				DebugLogger.logInfo("Running on " + getFPS() + " FPS (Good Performance)");
-			}
 		}
+		debugFPS();
 	}
 	
+	private void debugFPS() {
+		DebugLogger.logInfo("Running on " + getFPS() + " FPS");
+	}
 }
