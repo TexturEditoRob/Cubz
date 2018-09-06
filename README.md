@@ -16,5 +16,5 @@
 
 ## Little Credits
 
-- Cristea Andrei Flavian "ImTallone": Creator
+- Cristea Andrei Flavian "ImTallone": Creator & Coder
 - Randy "zenith391": Coder & feature adder
