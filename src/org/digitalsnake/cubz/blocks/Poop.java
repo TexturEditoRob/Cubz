@@ -1,9 +1,9 @@
 package org.digitalsnake.cubz.blocks;
 
-public class DirtBlock extends Block {
+public class Poop extends Block {
 
-	public DirtBlock() {
-		setTexture("dirt");
+	public Poop() {
+		setTexture("");
 	}
 	
 	@Override

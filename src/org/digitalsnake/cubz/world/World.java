@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 import org.digitalsnake.cubz.blocks.Block;
 import org.digitalsnake.cubz.blocks.BlockInstance;
-import org.digitalsnake.cubz.blocks.DirtBlock;
-import org.digitalsnake.cubz.blocks.GrassBlock;
-import org.digitalsnake.cubz.blocks.StoneBlock;
+import org.digitalsnake.cubz.blocks.Dirt;
+import org.digitalsnake.cubz.blocks.Grass;
+import org.digitalsnake.cubz.blocks.Stone;
 import org.digitalsnake.cubz.entity.Entity;
 import org.digitalsnake.cubz.entity.UglyPlayer;
 
@@ -43,9 +43,9 @@ public class World {
 	}
 	
 	private void generate() {
-		GrassBlock grass = new GrassBlock();
-		DirtBlock dirt = new DirtBlock();
-		StoneBlock stone = new StoneBlock();
+		Grass grass = new Grass();
+		Dirt dirt = new Dirt();
+		Stone stone = new Stone();
 		for (int x = 0; x < 64; x++) {
 			for (int z = 0; z < 64; z++) {
 				blocks[x][5][z] = new BlockInstance(grass);

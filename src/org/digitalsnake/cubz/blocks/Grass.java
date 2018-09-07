@@ -1,9 +1,9 @@
 
 package org.digitalsnake.cubz.blocks;
 
-public class GrassBlock extends Block {
+public class Grass extends Block {
 
-	public GrassBlock() {
+	public Grass() {
 		setTexture("grassblock");
 	}
 	
