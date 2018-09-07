@@ -18,3 +18,4 @@
 
 - Cristea Andrei Flavian "ImTallone": Creator & Coder
 - Randy "zenith391": Coder & feature adder
+- Andrei "TexturEditoRob": Texture Developer
